@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+<meta content="South Shuswap Health Services Society – mobile lab services, income tax help, cyber safety &amp; senior support in Blind Bay, BC." name="description"/>
+<meta content="South Shuswap Health Services Society" property="og:title"/>
+<meta content="Local health and support services for seniors in Blind Bay, BC. Mobile lab, tax help, addictions counseling, cyber safety." property="og:description"/>
+<meta content="https://images.pexels.com/photos/18459198/pexels-photo-18459198.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<title>South Shuswap Health Services Society – Blind Bay</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&amp;family=Open+Sans:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root {
+      --primary: #2E6B5E;
+      --secondary: #4A8C7A;
+      --accent: #D4A373;
+      --text: #1C1C1C;
+      --background: #F9F6F0;
+      --muted: #E8E2D5;
+      --heading: 'Lora', serif;
+      --body: 'Open Sans', sans-serif;
+      --wood-light: #e5d9c8;
+      --shadow: rgba(0, 0, 0, 0.06);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--body);
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.5;
+    }
+    h1, h2, h3, h4 {
+      font-family: var(--heading);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: var(--primary); text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { color: var(--secondary); }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+
+    
+    .site-header {
+      position: fixed; top: 0; left: 0; width: 100%;
+      background: transparent; z-index: 50;
+      padding: 0.75rem 1.5rem;
+      transition: background 0.2s;
+      display: flex; align-items: center;
+      pointer-events: none;
+    }
+    .site-header.scrolled {
+      background: rgba(249, 246, 240, 0.92);
+      backdrop-filter: blur(4px);
+      box-shadow: 0 1px 6px var(--shadow);
+    }
+    .site-header .org-name {
+      font-family: var(--heading);
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text);
+      pointer-events: auto;
+      background: rgba(249,246,240,0.7);
+      padding: 0.2rem 0.8rem 0.2rem 0.4rem;
+      border-radius: 0 12px 12px 0;
+      margin-left: -0.4rem;
+    }
+    .site-header.scrolled .org-name { background: transparent; padding-left: 0; }
+
+    
+    .proof-strip {
+      background: var(--muted);
+      padding: 0.6rem 1.5rem;
+      font-size: 0.85rem;
+      display: flex; flex-wrap: wrap;
+      justify-content: center; gap: 0.5rem 1.8rem;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      margin-top: 3rem;
+    }
+    .proof-strip span { display: inline-flex; align-items: center; gap: 0.3rem; }
+    .proof-strip a { font-weight: 500; }
+
+    
+    .hero {
+      min-height: 92vh;
+      display: flex; align-items: flex-end;
+      position: relative;
+      background: var(--primary);
+      margin-top: -3rem;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background: url('https://images.pexels.com/photos/18459198/pexels-photo-18459198.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940') center 30% / cover no-repeat;
+      opacity: 0.55;
+      mix-blend-mode: luminosity;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(46,107,94,0.85) 0%, rgba(46,107,94,0.1) 70%, transparent 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 5rem 1.5rem 4rem;
+      max-width: 700px;
+      margin-left: 0;
+      width: 100%;
+    }
+    .hero-content h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      color: #fff;
+      line-height: 1.1;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      max-width: 12ch;
+    }
+    .hero-content .sub {
+      font-size: 1.2rem;
+      color: rgba(255,255,255,0.9);
+      margin-top: 1rem;
+      font-weight: 400;
+      max-width: 30ch;
+    }
+    .hero-actions {
+      display: flex; flex-wrap: wrap; gap: 1rem;
+      margin-top: 2rem;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #1c1c1c;
+      font-weight: 600;
+      padding: 0.7rem 1.6rem;
+      border-radius: 40px;
+      text-decoration: none;
+      font-size: 0.95rem;
+      border: 1px solid transparent;
+      transition: 0.15s;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.7);
+      color: #fff;
+    }
+    .btn-outline:hover { background: rgba(255,255,255,0.15); color: #fff; }
+    .btn:hover { background: #c4956a; color: #1c1c1c; }
+
+    
+    section { padding: 4rem 0; }
+    .section-title {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      border-left: 6px solid var(--accent);
+      padding-left: 1rem;
+    }
+
+    
+    .about-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2.5rem; align-items: center;
+    }
+    .about-grid img {
+      border-radius: 24px 8px 24px 8px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      width: 100%; height: 400px; object-fit: cover;
+    }
+    .about-text p { font-size: 1.1rem; margin-bottom: 1rem; }
+
+    
+    .services-list { display: flex; flex-direction: column; gap: 2.5rem; }
+    .service-item {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; align-items: center;
+    }
+    .service-item:nth-child(even) .service-img { order: 1; }
+    .service-item:nth-child(even) .service-desc { order: 0; }
+    .service-img img {
+      width: 100%; height: 260px; object-fit: cover;
+      border-radius: 16px 4px 16px 4px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+    }
+    .service-desc h3 { font-size: 1.4rem; margin-bottom: 0.3rem; }
+    .service-desc p { color: #2e2e2e; }
+
+    
+    .why-scroll {
+      display: flex; gap: 1.5rem;
+      overflow-x: auto; padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+    }
+    .why-card {
+      flex: 0 0 280px; min-height: 180px;
+      background: #fff; border-radius: 24px 8px 24px 8px;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+      scroll-snap-align: start;
+      border: 1px solid var(--muted);
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .why-card h4 { font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--primary); }
+    .why-card p { font-size: 0.95rem; }
+
+    
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before {
+      content: ''; position: absolute; left: 8px; top: 0; bottom: 0;
+      width: 3px; background: var(--muted);
+    }
+    .timeline-item {
+      display: flex; gap: 1.5rem; margin-bottom: 2.5rem;
+      position: relative;
+    }
+    .timeline-icon {
+      width: 36px; height: 36px;
+      background: var(--primary); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1.1rem; flex-shrink: 0;
+      margin-left: -2rem; z-index: 1;
+      border: 3px solid var(--background);
+    }
+    .timeline-content {
+      background: #fff; padding: 1.2rem 1.5rem;
+      border-radius: 16px; flex: 1;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .timeline-content h4 { margin-bottom: 0.2rem; }
+    .timeline-content p { font-size: 0.95rem; color: #333; }
+
+    
+    .gallery-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem; grid-auto-flow: dense;
+    }
+    .gallery-grid img {
+      width: 100%; height: 220px; object-fit: cover;
+      border-radius: 12px; cursor: pointer;
+      transition: transform 0.15s, box-shadow 0.15s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .gallery-grid img:hover { transform: scale(1.01); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+    .gallery-grid img:nth-child(2) { height: 280px; }
+    .gallery-grid img:nth-child(4) { height: 260px; }
+
+    
+    .cta-strip {
+      background: var(--primary);
+      background-image: linear-gradient(145deg, rgba(212,163,115,0.08) 0%, transparent 60%);
+      padding: 4rem 1.5rem;
+      text-align: center;
+      color: #fff;
+    }
+    .cta-strip h2 { font-size: 2rem; margin-bottom: 0.5rem; }
+    .cta-strip p { font-size: 1.1rem; max-width: 500px; margin: 0 auto; opacity: 0.9; }
+
+    
+    .contact-wrap {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+    }
+    .contact-info p { margin-bottom: 0.5rem; }
+    .contact-info a { font-weight: 500; }
+    .contact-form input, .contact-form textarea {
+      width: 100%; padding: 0.8rem 1rem;
+      border: 1px solid var(--muted); border-radius: 12px;
+      font-family: var(--body); font-size: 1rem;
+      background: #fff; margin-bottom: 1rem;
+    }
+    .contact-form textarea { min-height: 100px; resize: vertical; }
+    .contact-form button {
+      background: var(--primary); color: #fff;
+      border: none; padding: 0.8rem 2rem; border-radius: 40px;
+      font-weight: 600; cursor: pointer; font-size: 1rem;
+    }
+    .contact-form button:hover { background: var(--secondary); }
+
+    
+    .site-footer {
+      background: var(--text); color: #ccc;
+      padding: 2rem 1.5rem; font-size: 0.85rem;
+      display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem;
+    }
+    .site-footer a { color: #bbb; }
+    .site-footer a:hover { color: #fff; }
+
+    
+    .lightbox {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.75);
+      display: none; align-items: center; justify-content: center;
+      z-index: 100; cursor: pointer;
+    }
+    .lightbox img { max-width: 90%; max-height: 90%; border-radius: 8px; }
+
+    
+    @media (max-width: 768px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .service-item { grid-template-columns: 1fr; }
+      .service-item:nth-child(even) .service-img { order: 0; }
+      .contact-wrap { grid-template-columns: 1fr; }
+      .hero-content h1 { max-width: 100%; }
+      .proof-strip { font-size: 0.75rem; gap: 0.3rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+<header class="site-header" id="siteHeader">
+<div class="org-name">South Shuswap Health Services Society</div>
+</header>
+<div class="proof-strip">
+<span>📍 Blind Bay, BC &amp; South Shuswap</span>
+<span>🏛️ Community Health &amp; Senior Support</span>
+<span><a href="https://sshss.ca/" rel="noopener" target="_blank">📄 Source record → sshss.ca</a></span>
+</div>
+<section class="hero" id="hero">
+<div class="hero-bg"></div>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<h1>Supporting Seniors in Blind Bay</h1>
+<div class="sub">Mobile lab services, income tax help, cyber safety, and more.</div>
+<div class="hero-actions">
+<a class="btn" href="#about">Read the summary</a>
+<a class="btn btn-outline" href="https://sshss.ca/" rel="noopener" target="_blank">Check source record</a>
+</div>
+</div>
+</section>
+<section id="about">
+<div class="container">
+<h2 class="section-title">Community hub</h2>
+<div class="about-grid">
+<img alt="Health centre near lake in winter" height="800" src="https://images.pexels.com/photos/14581527/pexels-photo-14581527.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" width="1200"/>
+<div class="about-text">
+<p>South Shuswap Health Services Society provides mobile lab services, senior support, income tax help, addictions counseling, cyber safety programs, fitness and nutrition guidance, and mental health support for seniors in Blind Bay, BC.</p>
+<p>We are a local non-profit serving the South Shuswap region. Our programs are designed to meet the needs of older adults who want to stay independent and connected.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="services" style="background: var(--muted);">
+<div class="container">
+<h2 class="section-title">Support paths</h2>
+<div class="services-list">
+<div class="service-item">
+<div class="service-img"><img alt="Nurse drawing blood" height="800" src="https://images.pexels.com/photos/5206977/pexels-photo-5206977.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" width="1200"/></div>
+<div class="service-desc"><h3>Mobile Lab Services</h3><p>On-site lab services for seniors who cannot travel.</p></div>
+</div>
+<div class="service-item">
+<div class="service-img"><img alt="Senior couple doing taxes" height="800" src="https://images.unsplash.com/photo-1758523419091-b48deb56d7b9?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MzQ1NzV8MHwxfHNlYXJjaHwxfHxzZW5pb3IlMjBjb3VwbGUlMjBkb2luZyUyMHRheGVzJTIwYXQlMjBraXRjaGVuJTIwdGFibGV8ZW58MHwwfHx8MTc3OTQ5NDgwN3ww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" width="1200"/></div>
+<div class="service-desc"><h3>Senior Support</h3><p>Income tax preparation and benefits assistance.</p></div>
+</div>
+<div class="service-item">
+<div class="service-img"><img alt="Counselor with senior" height="800" src="https://images.unsplash.com/photo-1758691462482-2b6ccbaefa6e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MzQ1NzV8MHwxfHNlYXJjaHwxfHxjb3Vuc2Vsb3IlMjBzcGVha2luZyUyMHdpdGglMjBzZW5pb3IlMjBpbiUyMG9mZmljZXxlbnwwfDB8fHwxNzc5NDk0ODA3fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" width="1200"/></div>
+<div class="service-desc"><h3>Addictions &amp; Substance Abuse Counseling</h3><p>Confidential counseling for individuals and families.</p></div>
+</div>
+<div class="service-item">
+<div class="service-img"><img alt="Senior using laptop with security icon" height="800" src="https://images.unsplash.com/photo-1683108339413-46e8d4a4bdeb?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MzQ1NzV8MHwxfHNlYXJjaHwxfHxzZW5pb3IlMjB1c2luZyUyMGxhcHRvcCUyMHdpdGglMjBzZWN1cml0eSUyMHNoaWVsZCUyMGljb258ZW58MHwwfHx8MTc3OTQ5NDgwOHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" width="1200"/></div>
+<div class="service-desc"><h3>Cyber Safety &amp; Identity Theft Programs</h3><p>Workshops to help seniors stay safe online.</p></div>
+</div>
+</div>
+</div>
+</section>
+<section id="whyus">
+<div class="container">
+<h2 class="section-title">Why we’re local</h2>
+<div class="why-scroll">
+<div class="why-card"><h4>📍 In your community</h4><p>Services delivered in Blind Bay and the South Shuswap region.</p></div>
+<div class="why-card"><h4>👵 Tailored for seniors</h4><p>Programs designed specifically for older adults.</p></div>
+<div class="why-card"><h4>🤝 Friendly &amp; confidential</h4><p>Support that respects your privacy and dignity.</p></div>
+</div>
+</div>
+</section>
+<section id="process" style="background: var(--muted);">
+<div class="container">
+<h2 class="section-title">How to connect</h2>
+<div class="timeline">
+<div class="timeline-item">
+<div class="timeline-icon">1</div>
+<div class="timeline-content"><h4>Reach out</h4><p>Call or email us to ask about programs, donations, or volunteering.</p></div>
+</div>
+<div class="timeline-item">
+<div class="timeline-icon">2</div>
+<div class="timeline-content"><h4>Share your needs</h4><p>Tell us which service interests you — mobile lab, tax help, counseling, or cyber safety.</p></div>
+</div>
+<div class="timeline-item">
+<div class="timeline-icon">3</div>
+<div class="timeline-content"><h4>We confirm next steps</h4><p>We’ll explain how we can help and arrange a visit or appointment.</p></div>
+</div>
+</div>
+</div>
+</section>
+<section id="gallery">
+<div class="container">
+<h2 class="section-title">Around the community</h2>
+<div class="gallery-grid">
+<img alt="Group exercise in park" height="800" src="https://images.unsplash.com/photo-1758798458635-f01402b40919?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MzQ1NzV8MHwxfHNlYXJjaHwxfHxncm91cCUyMG9mJTIwc2VuaW9ycyUyMGRvaW5nJTIwZ2VudGxlJTIwZXhlcmNpc2VzJTIwaW4lMjBwYXJrfGVufDB8MHx8fDE3Nzk0OTQ4MDl8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" width="1200"/>
+<img alt="Volunteer helping with groceries" height="800" src="https://images.unsplash.com/photo-1628717341663-0007b0ee2597?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MzQ1NzV8MHwxfHNlYXJjaHwxfHx2b2x1bnRlZXIlMjBoZWxwaW5nJTIwc2VuaW9yJTIwd2l0aCUyMGdyb2NlcnklMjBiYWdzfGVufDB8MHx8fDE3Nzk0OTQ4MTB8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" width="1200"/>
+<img alt="Senior meditating in garden" height="800" src="https://images.unsplash.com/photo-1590342529578-b4b0d8115bbe?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w5MzQ1NzV8MHwxfHNlYXJjaHwxfHxzZW5pb3IlMjB3b21hbiUyMG1lZGl0YXRpbmclMjBpbiUyMGdhcmRlbnxlbnwwfDB8fHwxNzc5NDk0ODExfDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080" width="1200"/>
+<img alt="Community potluck volunteers" height="800" src="https://images.pexels.com/photos/6647050/pexels-photo-6647050.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=650&amp;w=940" width="1200"/>
+</div>
+</div>
+</section>
+<div class="cta-strip">
+<h2>Serving Blind Bay &amp; South Shuswap</h2>
+<p>Mobile lab, tax help, addictions counseling, cyber safety — we’re here for seniors.</p>
+</div>
+<section id="contact">
+<div class="container">
+<h2 class="section-title">Contact &amp; details</h2>
+<div class="contact-wrap">
+<div class="contact-info">
+<p><strong>South Shuswap Health Services Society</strong></p>
+<p>10 – 2417 GOLF COURSE DR, BLIND BAY, BC</p>
+<p>Phone: <a href="tel:+12506753661">(250) 675-3661</a></p>
+<p>Email: <a href="mailto:sshealthss@gmail.com">sshealthss@gmail.com</a></p>
+<p style="margin-top:1rem;"><a href="https://sshss.ca/" rel="noopener" target="_blank">Original source record → sshss.ca</a></p>
+<p style="font-size:0.9rem; color:#555;">Photos: Jsme MILA (Pexels), Efrem Efre (Pexels), Kaboompics (Pexels), Vitaly Gariev (Unsplash), Sweet Life (Unsplash), Khanh Do (Unsplash), Ismael Paramo (Unsplash), Boshoku (Unsplash), RDNE Stock project (Pexels).</p>
+</div>
+<div class="contact-form">
+<form action="mailto:sshealthss@gmail.com" enctype="text/plain" method="post">
+<input name="name" placeholder="Your name" required="" type="text"/>
+<input name="email" placeholder="Email address" required="" type="email"/>
+<textarea name="message" placeholder="How can we help? (programs, donations, volunteering, general inquiry)"></textarea>
+<button type="submit">Send message</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+<footer class="site-footer">
+<span>© <span id="year"></span> South Shuswap Health Services Society</span>
+<span><a href="https://sshss.ca/" rel="noopener" target="_blank">Source record</a> | Photos attribution above</span>
+</footer>
+<div class="lightbox" id="lightbox">
+<img alt="enlarged view" height="800" src="" width="1200"/>
+</div>
+<script>
+    (function() {
+      // current year
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // header scroll
+      const header = document.getElementById('siteHeader');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 60) header.classList.add('scrolled');
+        else header.classList.remove('scrolled');
+      });
+
+      // lightbox
+      const lb = document.getElementById('lightbox');
+      const lbImg = lb.querySelector('img');
+      document.querySelectorAll('.gallery-grid img').forEach(img => {
+        img.addEventListener('click', function(e) {
+          lbImg.src = this.src;
+          lb.style.display = 'flex';
+        });
+      });
+      lb.addEventListener('click', function() { this.style.display = 'none'; });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') lb.style.display = 'none'; });
+    })();
+  </script>
+</body>
+</html>
